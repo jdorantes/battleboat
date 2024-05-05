@@ -20,11 +20,44 @@
 	<link rel="publisher" href="https://plus.google.com/+BillMei" />
 
 	<link href="css/styles.css"  rel="stylesheet" media="all"/>
+	<script type="text/javascript">
+		!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-HBv08LJFTbU2xMGwj3S1OsKhv2Vpsuv6ExiXFDsS4xHLy/cyWAYesYEcdx4kwkJ5",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.7.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var v=function(){return this._q=[],this},f=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<f.length;y++)n(v,f[y]);r.Revenue=v;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+		
+		amplitude.init('f21853a1c7d3b70c4fbf79fe089bb055', 'jorge',
+			{
+  				defaultTracking: true,
+			});
+		</script>
 </head>
 <body>
 <div class="container">
-	<h1>Battleboat.js</h1>
+	<h1>Battleboat - My first Amplitude instrumentation project!</h1>
 	<p class="tagline">A JavaScript AI that beats humans at battleship.</p>
+	<form class="form" id="myFormId" name="my form name">
+		<label for="fname">First name:</label><br>
+		<input type="text" id="fname" name="fname"><br>
+		<label for="lname">Last name:</label><br>
+		<input type="text" id="lname" name="lname">
+	</form> 
+	<br>
+	<a href="/?utm_source=newsletter&utm_campaign=product_analytics_playbook&utm_medium=email&utm_term=product%20analytics&utm_content=banner-link">Link with UTM Parameters</a>
+	<br><br>
+	
+	<table class="identifierTable">
+		<tr>
+		  <th>Amplitude Identifier</th>
+		  <th>Value</th>  
+		</tr>
+		<tr>
+		  <td>Device Id</td>
+		  <td class="myDeviceId">xxzxd</td> 
+		</tr>
+		<tr>
+		  <td>User Id</td>
+		  <td class="myUserId">yyy</td>
+		</tr>
+	  </table> 
+
 	<p>How to play</p>
 	<ol class="instructions">
 		<li id="step1">Select your ships from the left-hand side</li>
@@ -71,7 +104,6 @@
 	<p>This project is open source <a href="https://github.com/billmei/battleboat">on GitHub</a>.</p>
 </div>
 
-<a href="https://github.com/billmei/battleboat"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
 <script src="js/battleboat.js"></script>
 <span class="prefetch" id="prefetch1"></span>
