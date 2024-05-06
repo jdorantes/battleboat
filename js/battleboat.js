@@ -3,8 +3,6 @@
 
   //SE Bootcamp: Enter code to get user id and print it in the identifierTable table below this line
 
-  
-
   // Battleboat
   // Bill Mei, 2014
   // MIT License
@@ -199,8 +197,7 @@
     this.init();
 
     //Amplitude SE Bootcamp - Enter code to instrument the "Game Initialized" event below this line.
-
-    
+  }
   Game.size = 10; // Default grid size is 10x10
   Game.gameOver = false;
   // Checks if the game is won, and if it is, re-initializes the game
@@ -311,7 +308,7 @@
 
     //Amplitude SE Bootcamp - Enter code to instrument the "Ship Selected" along with event property "ShipType"
     // get ship type to pass as an event Property
-   
+
     Game.placeShipDirection = parseInt(
       document.getElementById("rotate-button").getAttribute("data-direction"),
       10,
@@ -434,12 +431,11 @@
       e.target.setAttribute("data-direction", "1");
       Game.placeShipDirection = Ship.DIRECTION_HORIZONTAL;
       //Amplitude SE Bootcamp - Enter code to collect event property "direction" and instrument "Ship Rotated" event
-      
     } else if (direction === Ship.DIRECTION_HORIZONTAL) {
       e.target.setAttribute("data-direction", "0");
       Game.placeShipDirection = Ship.DIRECTION_VERTICAL;
       //Amplitude SE Bootcamp - Enter code to collect event property "direction" and instrument "Ship Rotated" event
-      
+    }
   };
   // Click handler for the Start Game button
   Game.prototype.startGame = function (e) {
@@ -453,7 +449,6 @@
     self.readyToPlay = true;
 
     //Amplitude SE Bootcamp - Enter code to create a new user property "games_started" and increament its value every time a game starts. Send a "Game Started" event.
-    
 
     // Advanced the tutorial step
     if (gameTutorial.currentStep === 3) {
