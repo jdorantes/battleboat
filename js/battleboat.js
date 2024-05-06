@@ -205,6 +205,7 @@
     this.shotsTaken = 0;
     this.createGrid();
     this.init();
+
     //Instrument Game Initialized Event in Amplitude
     amplitude.track("Game Initialized");
   }
@@ -472,6 +473,11 @@
     el.addEventListener(transitionEndEventName(), fn, false);
     el.setAttribute("class", "invisible");
     self.readyToPlay = true;
+
+    const identifyEvent = new amplitude.Identify();
+    identifyEvent.add("games_started", 1);
+
+    amplitude.identify(identifyEvent);
 
     // instrument game start event
     amplitude.track("Game Started");
