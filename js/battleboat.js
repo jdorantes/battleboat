@@ -1,17 +1,9 @@
 (function () {
-  //get device id and print it in the identifiers table
-  setTimeout(function () {
-    var identifier = document.getElementsByClassName("myDeviceId")[0];
-    const deviceId = amplitude.getDeviceId();
-    identifier.innerHTML = deviceId;
-  }, 500);
+  //SE Bootcamp: Enter code to get device id and print it in the identifierTable table below this line
 
-  //get user id and print it in the identifiers table
-  setTimeout(function () {
-    var identifier = document.getElementsByClassName("myUserId")[0];
-    const userId = amplitude.getUserId();
-    identifier.innerHTML = userId;
-  }, 500);
+  //SE Bootcamp: Enter code to get user id and print it in the identifierTable table below this line
+
+  
 
   // Battleboat
   // Bill Mei, 2014
@@ -206,9 +198,9 @@
     this.createGrid();
     this.init();
 
-    //Instrument Game Initialized Event in Amplitude
-    amplitude.track("Game Initialized");
-  }
+    //Amplitude SE Bootcamp - Enter code to instrument the "Game Initialized" event below this line.
+
+    
   Game.size = 10; // Default grid size is 10x10
   Game.gameOver = false;
   // Checks if the game is won, and if it is, re-initializes the game
@@ -317,14 +309,9 @@
       .getElementById(Game.placeShipType)
       .setAttribute("class", "placing");
 
+    //Amplitude SE Bootcamp - Enter code to instrument the "Ship Selected" along with event property "ShipType"
     // get ship type to pass as an event Property
-    const eventProperties = {
-      shipType: Game.placeShipType,
-    };
-    // instrument ship selected
-
-    amplitude.track("Ship Selected", eventProperties);
-
+   
     Game.placeShipDirection = parseInt(
       document.getElementById("rotate-button").getAttribute("data-direction"),
       10,
@@ -446,22 +433,13 @@
     if (direction === Ship.DIRECTION_VERTICAL) {
       e.target.setAttribute("data-direction", "1");
       Game.placeShipDirection = Ship.DIRECTION_HORIZONTAL;
-      //collect rotation direction as event Property
-      const eventProperties = {
-        direction: "Horizontally",
-      };
-      //instrument ship rotated event
-      amplitude.track("Ship Rotated", eventProperties);
+      //Amplitude SE Bootcamp - Enter code to collect event property "direction" and instrument "Ship Rotated" event
+      
     } else if (direction === Ship.DIRECTION_HORIZONTAL) {
       e.target.setAttribute("data-direction", "0");
       Game.placeShipDirection = Ship.DIRECTION_VERTICAL;
-      //collect rotation direction as event Property
-      const eventProperties = {
-        direction: "Vertically",
-      };
-      //instrument ship rotated event
-      amplitude.track("Ship Rotated", eventProperties);
-    }
+      //Amplitude SE Bootcamp - Enter code to collect event property "direction" and instrument "Ship Rotated" event
+      
   };
   // Click handler for the Start Game button
   Game.prototype.startGame = function (e) {
@@ -474,13 +452,8 @@
     el.setAttribute("class", "invisible");
     self.readyToPlay = true;
 
-    const identifyEvent = new amplitude.Identify();
-    identifyEvent.add("games_started", 1);
-
-    amplitude.identify(identifyEvent);
-
-    // instrument game start event
-    amplitude.track("Game Started");
+    //Amplitude SE Bootcamp - Enter code to create a new user property "games_started" and increament its value every time a game starts. Send a "Game Started" event.
+    
 
     // Advanced the tutorial step
     if (gameTutorial.currentStep === 3) {
