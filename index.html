@@ -30,6 +30,14 @@
 			});
 			amplitude.setGroup('SE_Team', 'NAMER - West');
 		</script>
+		<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.9-min.js.gz"></script>
+		<script>
+			const sessionReplayTracking = window.sessionReplay.plugin({
+				sampleRate: 1,
+			});
+			window.amplitude.add(sessionReplayTracking);
+		</script>
+
 </head>
 <body>
 <div class="container">
