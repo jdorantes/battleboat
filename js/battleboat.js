@@ -1,3 +1,30 @@
+import { Experiment } from "@amplitude/experiment-js-client";
+console.log(Experiment);
+
+// (1) Initialize the experiment client with Amplitude Analytics.
+
+const experiment = Experiment.initializeWithAmplitudeAnalytics(
+  "9785b6031fae7301da00b454c5e3df4e"
+);
+console.log(experiment);
+
+const user = {
+  user_id: "brunie",
+};
+
+async function fetchDecisions() {
+  //Fetch Variant Decisions for User
+  await experiment.fetch(user);
+  console.log(experiment.fetch(user));
+  const variant = experiment.variant("tech-bootcamp");
+  console.log(variant);
+  //Create Control Variant
+  //Create Treatment Variant
+  //Use Payloads Here
+}
+
+fetchDecisions();
+
 (function () {
   //get device id and print it in the identifiers table
   setTimeout(function () {
