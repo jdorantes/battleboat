@@ -1,125 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,maximum-scale=1">
-	<title>Ampli Battleboat - My first Amplitude instrumentation project!</title>
-	<meta name="description" content="Ampli Battleboat - My first Amplitude instrumentation project!">
-	<meta name="keywords" content="Amplitude, Instrumentation, AI, robot, JavaScript">
-	<meta name="google" content="notranslate">
-	<link rel="icon" type="image/png" href="img/favicon.png" />
-	<link rel="image_src" href="img/apple-touch-icon-144x144-precomposed.png" />
-	<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/apple-touch-icon-57x57-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1" />
+    <title>
+      Ampli Battleboat - My first Amplitude instrumentation project!
+    </title>
+    <meta
+      name="description"
+      content="Ampli Battleboat - My first Amplitude instrumentation project!"
+    />
+    <meta
+      name="keywords"
+      content="Amplitude, Instrumentation, AI, robot, JavaScript"
+    />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="image_src" href="img/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="img/apple-touch-icon-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="img/apple-touch-icon-57x57-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="img/apple-touch-icon-72x72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="img/apple-touch-icon-114x114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="img/apple-touch-icon-144x144-precomposed.png"
+    />
 
-	<link rel="author" href="https://plus.google.com/+BillMei" />
-	<link rel="publisher" href="https://plus.google.com/+BillMei" />
+    <link rel="author" href="https://plus.google.com/+BillMei" />
+    <link rel="publisher" href="https://plus.google.com/+BillMei" />
 
-	<link href="css/styles.css"  rel="stylesheet" media="all"/>
-	<script type="text/javascript">
-		!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-HBv08LJFTbU2xMGwj3S1OsKhv2Vpsuv6ExiXFDsS4xHLy/cyWAYesYEcdx4kwkJ5",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.7.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var v=function(){return this._q=[],this},f=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<f.length;y++)n(v,f[y]);r.Revenue=v;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
-		
-		amplitude.init('f21853a1c7d3b70c4fbf79fe089bb055','jorge',
-			{
-  				defaultTracking: true,
-				logLevel:4,
-			});
-			amplitude.setGroup('SE_Team', 'NAMER - West');
-		</script>
-		<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.9-min.js.gz"></script>
-		<script>
-			const sessionReplayTracking = window.sessionReplay.plugin({
-				sampleRate: 1,
-			});
-			window.amplitude.add(sessionReplayTracking);
-		</script>
+    <link href="css/styles.css" rel="stylesheet" media="all" />
 
-</head>
-<body>
-<div class="container">
-	<h1>Battleboat - My first Amplitude instrumentation project!</h1>
-	<p class="tagline">A JavaScript AI that beats humans at battleship.</p>
-	
-	
-	<table class="identifierTable">
-		<tr>
-		  <th>Amplitude Identifier</th>
-		  <th>Value</th>  
-		</tr>
-		<tr>
-		  <td>Device Id</td>
-		  <td class="myDeviceId">xxzxd</td> 
-		</tr>
-		<tr>
-		  <td>User Id</td>
-		  <td class="myUserId">yyy</td>
-		</tr>
-	  </table> 
-	
-	  <form class="form" id="myFormId" name="my form name" action="/">
-		<label for="ftext">Enter some text</label>
-		<input type="text" id="ftext" name="ftext">
-		<br><br>
-		<input type="submit" />
-	</form> 
-	<br>
-	<a id="UTM_example" href="/?utm_source=newsletter&utm_campaign=product_analytics_playbook&utm_medium=email&utm_term=product%20analytics&utm_content=banner-link">Link with UTM Parameters</a>
-	<br><br>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.10.0-min.js.gz"></script>
+    <script>
+      window.amplitude.init("9785b6031fae7301da00b454c5e3df4e", "jorge");
+    </script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.9-min.js.gz"></script>
+    <script>
+      const sessionReplayTracking = window.sessionReplay.plugin({
+        sampleRate: 1,
+      });
+      window.amplitude.add(sessionReplayTracking);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Battleboat - My first Amplitude instrumentation project!</h1>
+      <p class="tagline">A JavaScript AI that beats humans at battleship.</p>
 
-	<p>How to play</p>
-	<ol class="instructions">
-		<li id="step1">Select your ships from the left-hand side</li>
-		<li id="step2">Place your ships on your map</li>
-		<li id="step3">Click on the cells of the enemy's map<br>
-		to find and destroy all five enemy ships</li>
-		<li id="step4">The computer will fire on your ships<br>
-		immediately after you fire on its ships.</li>
-	</ol>
-	<div class="game-container">
-		<div id="restart-sidebar" class="hidden">
-			<h2>Try Again</h2>
-			<button id="restart-game">Restart Game</button>
-		</div><div id="roster-sidebar">
-			<h2>Place Your Ships</h2>
-			<ul class="fleet-roster">
-				<li id="patrolboat">Patrol Boat</li>
-				<li id="submarine">Submarine</li>
-				<li id="destroyer">Destroyer</li>
-				<li id="battleship">Battleship</li>
-				<li id="carrier">Aircraft Carrier</li>
-			</ul>
-			<button id="rotate-button" data-direction="0">Rotate Ship</button>
-			<button id="start-game" class="hidden">Start Game</button>
-			<button id="place-randomly" class="hidden">Place Randomly and Start</button>
-		</div><div id="stats-sidebar">
-			<h2>Stats</h2>
-			<p><strong>Games Won</strong></p>
-			<p id="stats-wins">0 of 0</p>
-			<p><strong>Accuracy</strong></p>
-			<p id="stats-accuracy">0%</p>
-			<button id="reset-stats">Reset Stats</button>
-			<button id="prob-heatmap" class="hidden">Show Probability Heatmap</button>
-		</div><div class="grid-container">
-			<h2>Your Fleet</h2>
-			<div class="grid human-player"><span class="no-js">Please enable JavaScript to play this game</span></div>
-		</div><div class="grid-container">
-			<h2>Enemy Fleet</h2>
-			<div class="grid computer-player"><span class="no-js">Please enable JavaScript to play this game</span></div>
-		</div>
-	</div>
-	
-	<p>Created by <a href="https://billmei.net">Bill Mei</a>.</p>
-	<p>This project is open source <a href="https://github.com/billmei/battleboat">on GitHub</a>.</p>
-</div>
+      <table class="identifierTable">
+        <tr>
+          <th>Amplitude Identifier</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Device Id</td>
+          <td class="myDeviceId">xxzxd</td>
+        </tr>
+        <tr>
+          <td>User Id</td>
+          <td class="myUserId">yyy</td>
+        </tr>
+      </table>
 
+      <form class="form" id="myFormId" name="my form name" action="/">
+        <label for="ftext">Enter some text</label>
+        <input type="text" id="ftext" name="ftext" />
+        <br /><br />
+        <input type="submit" />
+      </form>
+      <br />
+      <a
+        id="UTM_example"
+        href="/?utm_source=newsletter&utm_campaign=product_analytics_playbook&utm_medium=email&utm_term=product%20analytics&utm_content=banner-link"
+        >Link with UTM Parameters</a
+      >
+      <br /><br />
 
-<script src="js/battleboat.js"></script>
-<span class="prefetch" id="prefetch1"></span>
-<span class="prefetch" id="prefetch2"></span>
-<span class="prefetch" id="prefetch3"></span>
-</body>
+      <p>How to play</p>
+      <ol class="instructions">
+        <li id="step1">Select your ships from the left-hand side</li>
+        <li id="step2">Place your ships on your map</li>
+        <li id="step3">
+          Click on the cells of the enemy's map<br />
+          to find and destroy all five enemy ships
+        </li>
+        <li id="step4">
+          The computer will fire on your ships<br />
+          immediately after you fire on its ships.
+        </li>
+      </ol>
+      <div class="game-container">
+        <div id="restart-sidebar" class="hidden">
+          <h2>Try Again</h2>
+          <button id="restart-game">Restart Game</button>
+        </div>
+        <div id="roster-sidebar">
+          <h2>Place Your Ships</h2>
+          <ul class="fleet-roster">
+            <li id="patrolboat">Patrol Boat</li>
+            <li id="submarine">Submarine</li>
+            <li id="destroyer">Destroyer</li>
+            <li id="battleship">Battleship</li>
+            <li id="carrier">Aircraft Carrier</li>
+          </ul>
+          <button id="rotate-button" data-direction="0">Rotate Ship</button>
+          <button id="start-game" class="hidden">Start Game</button>
+          <button id="place-randomly" class="hidden">
+            Place Randomly and Start
+          </button>
+        </div>
+        <div id="stats-sidebar">
+          <h2>Stats</h2>
+          <p><strong>Games Won</strong></p>
+          <p id="stats-wins">0 of 0</p>
+          <p><strong>Accuracy</strong></p>
+          <p id="stats-accuracy">0%</p>
+          <button id="reset-stats">Reset Stats</button>
+          <button id="prob-heatmap" class="hidden">
+            Show Probability Heatmap
+          </button>
+        </div>
+        <div class="grid-container">
+          <h2>Your Fleet</h2>
+          <div class="grid human-player">
+            <span class="no-js"
+              >Please enable JavaScript to play this game</span
+            >
+          </div>
+        </div>
+        <div class="grid-container">
+          <h2>Enemy Fleet</h2>
+          <div class="grid computer-player">
+            <span class="no-js"
+              >Please enable JavaScript to play this game</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <p>Created by <a href="https://billmei.net">Bill Mei</a>.</p>
+      <p>
+        This project is open source
+        <a href="https://github.com/billmei/battleboat">on GitHub</a>.
+      </p>
+    </div>
+
+    <script src="js/battleboat.js"></script>
+    <span class="prefetch" id="prefetch1"></span>
+    <span class="prefetch" id="prefetch2"></span>
+    <span class="prefetch" id="prefetch3"></span>
+  </body>
 </html>

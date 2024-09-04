@@ -29,7 +29,7 @@
     "If you want to try stuff out, run %csetDebug(true);%c in the " +
       "console before doing anything. You'll also get access to some cool features.",
     "background: #000; color: #0f0; padding: 2px 5px; border-radius: 2px;",
-    "",
+    ""
   );
 
   // Global Constants
@@ -168,7 +168,7 @@
 	*/
     var chars =
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split(
-          "",
+          ""
         ),
       uuid = [],
       i;
@@ -243,7 +243,7 @@
     } else {
       // Should never be called
       console.log(
-        "There was an error trying to find the correct player to target",
+        "There was an error trying to find the correct player to target"
       );
     }
 
@@ -327,7 +327,7 @@
 
     Game.placeShipDirection = parseInt(
       document.getElementById("rotate-button").getAttribute("data-direction"),
-      10,
+      10
     );
     self.placingOnGrid = true;
   };
@@ -345,7 +345,7 @@
         x,
         y,
         Game.placeShipDirection,
-        Game.placeShipType,
+        Game.placeShipType
       );
       if (successful) {
         // Done placing this ship
@@ -371,7 +371,7 @@
                 document.getElementById("start-game").removeAttribute("class");
               }
             },
-            false,
+            false
           );
           el.setAttribute("class", "invisible");
         }
@@ -405,7 +405,7 @@
               ".grid-cell-" +
                 Game.placeShipCoords[j].x +
                 "-" +
-                Game.placeShipCoords[j].y,
+                Game.placeShipCoords[j].y
             );
             classes = el.getAttribute("class");
             // Check if the substring ' grid-ship' already exists to avoid adding it twice
@@ -428,7 +428,7 @@
           ".grid-cell-" +
             Game.placeShipCoords[j].x +
             "-" +
-            Game.placeShipCoords[j].y,
+            Game.placeShipCoords[j].y
         );
         classes = el.getAttribute("class");
         // Check if the substring ' grid-ship' already exists to avoid adding it twice
@@ -646,7 +646,7 @@
       humanCells[k].addEventListener(
         "mouseover",
         this.placementMouseover,
-        false,
+        false
       );
       humanCells[k].addEventListener("mouseout", this.placementMouseout, false);
     }
@@ -693,7 +693,7 @@
     } else {
       // Should never be called
       console.log(
-        "There was an error trying to find the correct player's grid",
+        "There was an error trying to find the correct player's grid"
       );
     }
 
@@ -759,7 +759,7 @@
       // loop over the ship types when numShips > Constants.AVAILABLE_SHIPS.length
       var j = i % CONST.AVAILABLE_SHIPS.length;
       this.fleetRoster.push(
-        new Ship(CONST.AVAILABLE_SHIPS[j], this.playerGrid, this.player),
+        new Ship(CONST.AVAILABLE_SHIPS[j], this.playerGrid, this.player)
       );
     }
   };
@@ -782,7 +782,7 @@
             shipCoords[j].x,
             shipCoords[j].y,
             "ship",
-            this.player,
+            this.player
           );
         }
         return true;
@@ -826,7 +826,7 @@
             shipCoords[j].x,
             shipCoords[j].y,
             "ship",
-            this.player,
+            this.player
           );
           Game.usedShips[i] = CONST.USED;
         }
@@ -983,7 +983,7 @@
           allCells[i].x,
           allCells[i].y,
           "sunk",
-          this.player,
+          this.player
         );
       }
     }
@@ -1059,7 +1059,7 @@
         document.getElementById("step1").removeAttribute("class");
         humanGrid.setAttribute(
           "class",
-          humanGrid.getAttribute("class") + " highlight",
+          humanGrid.getAttribute("class") + " highlight"
         );
         document.getElementById("step2").setAttribute("class", "current-step");
         this.currentStep++;
@@ -1074,7 +1074,7 @@
       case 3:
         computerGrid.setAttribute(
           "class",
-          computerGrid.getAttribute("class") + " highlight",
+          computerGrid.getAttribute("class") + " highlight"
         );
         document.getElementById("step3").setAttribute("class", "current-step");
         this.currentStep++;
@@ -1178,7 +1178,7 @@
     var result = this.gameObject.shoot(
       maxProbCoords.x,
       maxProbCoords.y,
-      CONST.HUMAN_PLAYER,
+      CONST.HUMAN_PLAYER
     );
 
     // If the game ends, the next lines need to be skipped.
